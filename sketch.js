@@ -25,7 +25,7 @@ function preload() {
 
 function setup() {
   //Canvas is 1600 w x 800 h
-  createCanvas(1600,800);
+  createCanvas(1500, 700);
 
   // create a new Amplitude analyzer
   analyzer = new p5.Amplitude();
@@ -75,20 +75,28 @@ let rms = analyzer.getLevel();
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
   pop(); // restore original state
 
-  let vol = mic.getLevel();
-  let h = map(vol, 0, 1, height, 0);
   push();
-  fill('#D36462');
   stroke('#312D2F');
-  ellipse(width / 2, h - 25, 50, 50);
+  rotate(-a / 2);
+  scale(a / 90);
+  // Draw an ellipse with size based on volume
+  rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
 
-    let threshold = 0.1;
-    if (vol > threshold) {
-    stroke(0);
-    fill(0, 100);
-    rect(random(40, width), random(height), volume * 50, volume * 50);
-  }
+  // let vol = mic.getLevel();
+  // let h = map(vol, 0, 1, height, 0);
+  // push();
+  // fill('#D36462');
+  // stroke('#312D2F');
+  // ellipse(width / 2, h - 25, 50, 50);
+  // pop();
+
+  //   let threshold = 0.1;
+  //   if (vol > threshold) {
+  //   stroke(0);
+  //   fill(0, 100);
+  //   rect(random(40, width), random(height), volume * 50, volume * 50);
+  // }
 
 
 }
