@@ -62,5 +62,9 @@ let rms = analyzer.getLevel();
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
   pop();
 
-  
+
+  let h = map(vol, 0, 1, height, 0);
+  rect(width / 2, h - 25, 50, 50);
+
+
 }
