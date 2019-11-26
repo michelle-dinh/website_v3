@@ -36,7 +36,7 @@ function draw() {
   if (vol > threshold) {
     stroke(0);
     noFill();
-    // fill(random(rms), random(vol*80), random(vol*10));
+    fill(random(rms), random(vol*80), random(vol*10));
     rect(random(40, width), random(height), vol * 50, vol * 50);
   }
 
