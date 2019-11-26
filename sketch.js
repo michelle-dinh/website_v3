@@ -82,7 +82,7 @@ noFill();
   angle = angle + rms;
   rectMode(CENTER);
   rotate(a/50);
-  scale(rms);
+  scale(rms/20);
   // Draw an ellipse with size based on volume
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
   pop(); // restore original state
