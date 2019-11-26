@@ -42,7 +42,7 @@ function setup() {
 function draw() {
 
 //backoground color is cream
-background('#F6F1EB');
+background('#F4F3EB');
 
 level = analyzer.getLevel();
 
@@ -60,7 +60,7 @@ noFill();
 
 //OUTER BLACK SQUARE
   push(); //start new drawing state
-  stroke('#312D2F'); // dark brown
+  stroke('#7DC9E7'); // dark brown
   strokeWeight(1);
   angle = angle + rms;
   rectMode(CENTER); //the first two parameters of rectangle code is its origin point
@@ -84,7 +84,7 @@ noFill();
 //FLORAL SHAPE
   push();
   rotate(h);
-  stroke("#312D2F",); //dark brown
+  stroke("#FFBE86",); //dark brown
   strokeWeight(1);
   scale(vol*50);
   //for loop statement that will update the ellipse to form a flower shape until it reaches 9.
