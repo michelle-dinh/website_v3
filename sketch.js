@@ -5,7 +5,9 @@ var button;
 var colorPalette = ["⁣⁣⁣⁣#312D2F", "⁣⁣⁣⁣#E0D5C7", "⁣⁣⁣⁣#F6F1EB", "⁣⁣⁣⁣#D36462"];
 
 
+//adding functionality to button
 function toggleSong() {
+  //if song is playing, press button to pause, otherwise continue playing
   if (song.isPlaying()) {
     song.pause();
   } else {
@@ -14,22 +16,30 @@ function toggleSong() {
 
 }
 
+//preload music of choice, Slow by Giraffage
+
 function preload() {
   song = loadSound("assets/slow.mp3");
 }
 
 function setup() {
+  //Canvas is 1600 w x 800 h
   createCanvas(1600,800);
+
   // create a new Amplitude analyzer
   analyzer = new p5.Amplitude();
   fft = new p5.FFT();
-  // song.loop();
+
+  //Create audio input
   mic = new p5.AudioIn();
+
+  //start audio input
   mic.start();
 
   // Patch the input to an volume analyzer
   analyzer.setInput(song);
 
+  //create toggle button for music
   button = createButton('toggle');
   button.mousePressed(toggleSong);
   song.play();
@@ -38,6 +48,7 @@ function setup() {
 
 function draw() {
 
+//backoground color is cream
 background('#F6F1EB');
 
 level = analyzer.getLevel();
@@ -54,20 +65,21 @@ let rms = analyzer.getLevel();
   let a = angle;
   translate(width/2, height/2);
 
-  push();
+  push(); //start new drawing state
   angle = angle + rms;
   rectMode(CENTER);
   rotate(a / 2);
   scale(a / 150);
   // Draw an ellipse with size based on volume
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
-  pop();
+  pop(); // restore original state
 
   let vol = mic.getLevel();
   let h = map(vol, 0, 1, height, 0);
   push();
+  fill('#D36462');
   stroke('#312D2F');
-  rect(width / 2, h - 25, 50, 50);
+  ellipse(width / 2, h - 25, 50, 50);
   pop();
 
 
