@@ -90,7 +90,7 @@ noFill();
   push();
   rectMode(CENTER);
   stroke('#D36462'); //reddish
-  strokeWeight(h*20);
+  strokeWeight(vol*20);
   rotate(-a/50);
   scale(rms / 20 );
   // Draw an rectangle with size based on volume
