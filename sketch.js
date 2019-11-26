@@ -21,6 +21,7 @@ translate(windowWidth/2, windowHeight/2);
 
 level = analyzer.getLevel();
 fft.analyze();
+let vol = mic.getLevel();
 
 var bass = fft.getEnergy(100, 150);
   var treble = fft.getEnergy(150, 250);
