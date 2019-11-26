@@ -1,11 +1,8 @@
-var song, fft, analyzer;
+var song, analyzer;
 let mic;
 var angle = 0.0;
 var button; 
 let sound, reverb;
-//creating an array for color palette (dark brown, beige, cream, reddish)
-var colorPalette = ["⁣⁣⁣⁣#312D2F", "⁣⁣⁣⁣#E0D5C7", "⁣⁣⁣⁣#F6F1EB", "⁣⁣⁣⁣#D36462"];
-
 
 //adding functionality to button
 function toggleSong() {
@@ -30,7 +27,6 @@ function setup() {
 
   // create a new Amplitude analyzer
   analyzer = new p5.Amplitude();
-  fft = new p5.FFT();
 
   //Create audio input
   mic = new p5.AudioIn();
