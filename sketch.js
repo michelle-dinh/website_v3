@@ -29,7 +29,7 @@ function draw() {
 
   // Get the average (root mean square) amplitude
   let rms = analyzer.getLevel();
-  fill(rms*20, rms*50, rms*80);
+  fill(20, 50, 80);
 
   let threshold = 0.1;
   if (vol > threshold) {
@@ -41,6 +41,6 @@ function draw() {
 
   // Draw an ellipse with size based on volume
   let h = map(vol, 0, 1, height, 0);
-  ellipse(h * width / 2, h - 25, 10 + rms * 200, 10 + rms * 200);
+  ellipse(h + 25, h - 25, 10 + rms * 200, 10 + rms * 200);
   // ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
 }
