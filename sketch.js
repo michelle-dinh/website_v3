@@ -51,12 +51,15 @@ let rms = analyzer.getLevel();
 
   noFill();
   stroke('#D36462');
-  strokeWeight(mouseY);
+  let y = map(mouseY, 0, 20, 0, 100);
+  strokeWeight(y);
 
 
   let c = cos(angle);
   translate(width/2, height/2);
+  push();
   rotate(c);
   // Draw an ellipse with size based on volume
   rect(0, 0, 20 + rms * 200, 20 + rms * 200);
+  pop();
 }
