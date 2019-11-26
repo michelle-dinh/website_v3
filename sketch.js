@@ -25,7 +25,7 @@ function preload() {
 
 function setup() {
   //Canvas is 1600 w x 800 h
-  createCanvas(1500, 700);
+  createCanvas(1500, 900);
 
   // create a new Amplitude analyzer
   analyzer = new p5.Amplitude();
@@ -70,15 +70,17 @@ let rms = analyzer.getLevel();
   angle = angle + rms;
   rectMode(CENTER);
   rotate(a / 2);
-  scale(a / 150);
+  scale(a / 300);
   // Draw an ellipse with size based on volume
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
   pop(); // restore original state
 
   push();
+  rectMode(CENTER);
   stroke('#312D2F');
+  strokeWeight(mouseY);
   rotate(-a / 2);
-  scale(a / 90);
+  scale(a / 200);
   // Draw an ellipse with size based on volume
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
