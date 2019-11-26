@@ -27,8 +27,8 @@ let vol = mic.getLevel();
 
 let rms = analyzer.getLevel();
   fill(127);
-  stroke(0);
+  stroke('#D36462');
 
   // Draw an ellipse with size based on volume
-  ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
+  rect(width / 2, height / 2, 50 + rms * 500, 50 + rms * 500);
 }
