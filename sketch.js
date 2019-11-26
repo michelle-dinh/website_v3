@@ -34,7 +34,7 @@ function setup() {
   // Patch the input to an volume analyzer
   analyzer.setInput(song);
 
-  song.play();
+  song.loop();
 
 }
 
