@@ -114,10 +114,10 @@ noFill();
   let threshold = 0.1;
   push();
   scale(vol*50);
-  if (vol > threshold) {
+  if (rms > threshold) {
     noStroke();
     fill('#D36462');
-    ellipse(random(width), random(height), vol * 200, vol * 200);
+    ellipse(random(width), random(height), rms + 100, rms + 100);
   }
 
   pop();
