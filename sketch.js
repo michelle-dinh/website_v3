@@ -96,19 +96,14 @@ let rms = analyzer.getLevel();
 
   pop();
 
-
-  // push();
-  // fill('#D36462');
-  // stroke('#312D2F');
-  // ellipse(width / 2, h - 25, 50, 50);
-  // pop();
-
-  //   let threshold = 0.1;
-  //   if (vol > threshold) {
-  //   stroke(0);
-  //   fill(0, 100);
-  //   rect(random(40, width), random(height), volume * 50, volume * 50);
-  // }
+    let threshold = 0.1;
+    push();
+    if (vol > threshold) {
+    stroke(0);
+    fill(0, 100);
+    polygon(random(40, width), random(height), vol * 50, vol * 50);
+  }
+  pop();
 
 
 }
