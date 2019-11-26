@@ -82,7 +82,7 @@ let rms = analyzer.getLevel();
   rectMode(CENTER);
   stroke('#D36462');
   rotate(-a/50);
-  scale(h / 200);
+  scale(h + 200 );
   // Draw an rectangle with size based on volume
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
