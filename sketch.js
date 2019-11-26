@@ -68,7 +68,7 @@ fft.analyze();
 // Get the average (root mean square) amplitude
 let rms = analyzer.getLevel();
 
-  noFill();
+noFill();
 
 
   let a = angle;
@@ -113,10 +113,11 @@ let rms = analyzer.getLevel();
   // The louder the volume, the larger the ellipse.
   let threshold = 0.1;
   push();
+  scale(vol*50);
   if (vol > threshold) {
     noStroke();
     fill('#D36462');
-    ellipse(random(width), random(height), vol * 100, vol * 50);
+    ellipse(random(width), random(height), vol * 100, vol * 100);
   }
 
   pop();
