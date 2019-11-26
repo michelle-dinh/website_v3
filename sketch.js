@@ -33,6 +33,7 @@ let rms = analyzer.getLevel();
 
   noFill();
   stroke('#D36462');
+  strokeWeight(mouseY);
 
   // Draw an ellipse with size based on volume
   ellipse(width / 2, height / 2, 50 + rms * 500, 50 + rms * 500);
