@@ -83,8 +83,8 @@ let rms = analyzer.getLevel();
   stroke('#D36462');
   rotate(-a/50);
   scale(a / 200);
-  // Draw an ellipse with size based on volume
-  polygon(0, 0, 10 + rms * 200, 10 + rms * 200);
+  // Draw an rectangle with size based on volume
+  rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
 
   push();
