@@ -57,15 +57,17 @@ let rms = analyzer.getLevel();
   angle = angle + rms;
   rectMode(CENTER);
   rotate(a / 2);
-  scale(a / 4);
+  scale(a / 50);
   // Draw an ellipse with size based on volume
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
   pop();
 
   let vol = mic.getLevel();
   let h = map(vol, 0, 1, height, 0);
+  push();
   stroke('#312D2F');
   rect(width / 2, h - 25, 50, 50);
+  pop();
 
 
 }
