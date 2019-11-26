@@ -2,6 +2,7 @@ var song, fft, analyzer;
 let mic;
 var angle = 0.0;
 var button; 
+let sound, reverb;
 //creating an array for color palette (dark brown, beige, cream, reddish)
 var colorPalette = ["⁣⁣⁣⁣#312D2F", "⁣⁣⁣⁣#E0D5C7", "⁣⁣⁣⁣#F6F1EB", "⁣⁣⁣⁣#D36462"];
 
@@ -21,6 +22,8 @@ function toggleSong() {
 
 function preload() {
   song = loadSound("assets/slow.mp3");
+
+  song.disconnect();
 }
 
 function setup() {
@@ -45,6 +48,18 @@ function setup() {
   button.mousePressed(toggleSong);
   song.play();
 
+  reverb = new p5.Reverb();
+
+  // sonnects soundFile to reverb with a
+  // reverbTime of 6 seconds, decayRate of 0.2%
+  reverb.process(song, 6, 0.2);
+
+  reverb.amp(4); // turn it up!
+
+}
+
+function mousePressed() {
+  song.play();
 }
 
 function draw() {
