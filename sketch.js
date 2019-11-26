@@ -117,7 +117,7 @@ noFill();
   if (rms > threshold) {
     noStroke();
     fill('#D36462');
-    ellipse(random(width), random(height), rms + 100, rms + 100);
+    ellipse(0, random(height), rms + 100, rms + 100);
   }
 
   pop();
