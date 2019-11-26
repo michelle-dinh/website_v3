@@ -50,7 +50,6 @@ let rms = analyzer.getLevel();
 
   noFill();
   stroke('#D36462');
-  strokeWeight(mouseY);
 
 
   let a = angle;
