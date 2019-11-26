@@ -6,7 +6,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1500,700);
+  createCanvas(1500,900);
   // create a new Amplitude analyzer
   analyzer = new p5.Amplitude();
   fft = new p5.FFT();
