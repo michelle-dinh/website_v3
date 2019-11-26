@@ -7,23 +7,21 @@ let sound, reverb;
 var colorPalette = ["⁣⁣⁣⁣#312D2F", "⁣⁣⁣⁣#E0D5C7", "⁣⁣⁣⁣#F6F1EB", "⁣⁣⁣⁣#D36462"];
 
 
-adding functionality to button
+//adding functionality to button
 function toggleSong() {
   //if song is playing, press button to pause, otherwise continue playing
   if (song.isPlaying()) {
     song.pause();
-    song.disconnect();
   } else {
     song.play();
   }
 
 }
 
-// preload music of choice, Slow by Giraffage
+//preload music of choice, Slow by Giraffage
 
 function preload() {
   song = loadSound("assets/slow.mp3");
-
 }
 
 function setup() {
@@ -58,7 +56,6 @@ function setup() {
 
 }
 
-
 function draw() {
 
 //backoground color is cream
@@ -80,7 +77,7 @@ let rms = analyzer.getLevel();
   let h = map(vol, 0, 1, height, 0);
 
   push(); //start new drawing state
-  stroke('#312D2F'); //dark brown
+  stroke('#312D2F'); // dark brown
   strokeWeight(2);
   angle = angle + rms;
   rectMode(CENTER);
@@ -93,9 +90,9 @@ let rms = analyzer.getLevel();
   push();
   rectMode(CENTER);
   stroke('#D36462'); //reddish
-  strokeWeight(h*5);
+  strokeWeight(h*20);
   rotate(-a/50);
-  scale(rms + 20 );
+  scale(rms / 20 );
   // Draw an rectangle with size based on volume
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
@@ -105,7 +102,7 @@ let rms = analyzer.getLevel();
   strokeWeight(2);
 
   for (let i = 0; i < 10; i ++) {
-    ellipse(0, 20, 20, 60);
+    ellipse(0, 30, 20, 60);
     rotate(PI/5);
   }
 
