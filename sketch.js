@@ -88,7 +88,7 @@ let rms = analyzer.getLevel();
   pop();
 
   push();
-  scale(h/30);
+  rotate(h);
   for (let i = 0; i < 10; i ++) {
     ellipse(0, 30, 20, 80);
     rotate(PI/5);
