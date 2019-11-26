@@ -89,9 +89,9 @@ noFill();
 
   push();
   rectMode(CENTER);
-  stroke(random(rms), random(rms), random(rms)); //reddish
+  stroke('#312D2F'); //reddish
   strokeWeight(h*20);
-  rotate(-a/50);
+  rotate(-a/50 + mouseY);
   scale(rms / 20 );
   // Draw an rectangle with size based on volume
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
