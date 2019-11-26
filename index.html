@@ -8,9 +8,67 @@
     <script src="p5.js"></script>
     <script src="p5.sound.js"></script>
     <script src="sketch.js"></script>
-    <script src="http://threejsplaygnd.brangerbriz.net/js/three.min.js"></script>
-    <script src="http://threejsplaygnd.brangerbriz.net/js/Detector.js"></script>
   </head>
   <body>
+    <script src="http://threejsplaygnd.brangerbriz.net/js/three.min.js"></script>
+    <script src="http://threejsplaygnd.brangerbriz.net/js/Detector.js"></script>
+    <script>
+
+      if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+      
+      var camera, scene, renderer;
+      var geometry, material, mesh;
+
+      let mic;
+
+
+      function setup() {
+
+        var W = window.innerWidth, H = window.innerHeight;
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize( W, H );
+        document.body.appendChild( renderer.domElement );
+
+        camera = new THREE.PerspectiveCamera( 50, W/H, 1, 10000 );
+        camera.position.z = 500;
+
+        scene = new THREE.Scene();
+        
+        
+        geometry = new THREE.IcosahedronGeometry(188.64, 1);
+        material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading, wireframe: true, wireframeLinewidth: 1});
+        mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        //Create audio input
+        mic = new p5.AudioIn();
+
+        //start audio input
+        mic.start();
+        
+        
+
+
+      }
+
+      function draw() {
+
+        requestAnimationFrame( draw );
+
+        let vol = mic.getLevel();
+        let h = map(vol, 0, 1, height, 0);
+        
+        // experiment with code from the snippets menu here
+        mesh.position.x = Math.sin( Date.now() * h ) * 100;  
+        mesh.rotation.z = Date.now() * 0.0005;
+
+        renderer.render( scene, camera );
+
+      }
+
+      setup();
+      draw();
+
+    </script>
   </body>
 </html>
