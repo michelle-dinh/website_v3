@@ -23,24 +23,26 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  // background(255);
 
   let vol = mic.getLevel();
 
   // Get the average (root mean square) amplitude
   let rms = analyzer.getLevel();
+  noFill();
   // fill(20, 50, 80);
 
   let threshold = 0.1;
   if (vol > threshold) {
     stroke(0);
-    fill(random(rms), random(vol*80), random(vol*10));
+    noFill();
+    // fill(random(rms), random(vol*80), random(vol*10));
     rect(random(40, width), random(height), vol * 50, vol * 50);
   }
 
 
   // Draw an ellipse with size based on volume
   let h = map(vol, 0, 1, height, 0);
-  ellipse(width/2, h - 25, 10 + rms * 200, 10 + rms * 200);
+  ellipse(width/2, h - 10, 10 + rms * 200, 10 + rms * 200);
   // ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
 }
