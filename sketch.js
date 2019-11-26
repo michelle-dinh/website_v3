@@ -76,7 +76,7 @@ noFill();
   stroke('#F95A37'); //reddish
   strokeWeight(1); 
   rotate(-a/50); //rotate object by declared angle and mouseY position
-  scale(rms); //scale based on avg amplitude of song divided by 20;
+  scale(rms*100); //scale based on avg amplitude of song divided by 20;
   // Draw an rectangle with size based on volume
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
