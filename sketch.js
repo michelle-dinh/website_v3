@@ -22,6 +22,11 @@ function toggleSong() {
     song.pause();
   } else {
     song.play();
+     // connects song to reverb with a
+  // reverbTime of 2 seconds, decayRate of 0.2%
+    reverb = new p5.Reverb();
+      reverb.process(song, 2, 0.2);
+      reverb.amp(4); // turn it up!
   }
 
 }
@@ -52,14 +57,6 @@ function setup() {
   button = createButton('toggle');
   button.mousePressed(toggleSong);
   song.play();
-
-  reverb = new p5.Reverb();
-
-  // connects song to reverb with a
-  // reverbTime of 2 seconds, decayRate of 0.2%
-  reverb.process(song, 2, 0.2);
-
-  reverb.amp(4); // turn it up!
 
 }
 
