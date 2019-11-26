@@ -65,7 +65,7 @@ let rms = analyzer.getLevel();
   let a = angle;
   translate(width/2, height/2);
   let vol = mic.getLevel();
-  let h = map(vol, 0, 5, height, 0);
+  let h = map(vol, 0, 1, height, 0);
 
   push(); //start new drawing state
   stroke('#312D2F');
@@ -88,7 +88,7 @@ let rms = analyzer.getLevel();
   pop();
 
   push();
-  strokeWeight(h);
+  strokeWeight(h/20);
   for (let i = 0; i < 10; i ++) {
     ellipse(0, 30, 20, 80);
     rotate(PI/5);
