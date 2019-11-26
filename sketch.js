@@ -89,8 +89,8 @@ let rms = analyzer.getLevel();
 
   push();
   rotate(h);
-  strokeWeight(mouseY / 2);
-  scale(mouseX / 40);
+  strokeWeight(mouseY / 10);
+
   for (let i = 0; i < 10; i ++) {
     ellipse(0, 30, 20, 80);
     rotate(PI/5);
@@ -103,7 +103,7 @@ let rms = analyzer.getLevel();
     if (vol > threshold) {
     noStroke();
     fill('#E0D5C7');
-    ellipse(random(width), random(height), vol * 50, vol * 50);
+    ellipse(random(width), random(height), vol * 100, vol * 100);
   }
   pop();
 
