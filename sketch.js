@@ -81,7 +81,7 @@ noFill();
   strokeWeight(2);
   angle = angle + rms;
   rectMode(CENTER);
-  rotate(a/50);
+  rotate(h*a/50);
   scale(rms*30);
   // Draw an ellipse with size based on volume
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
@@ -89,7 +89,7 @@ noFill();
 
   push();
   rectMode(CENTER);
-  stroke('#D36462'); //reddish
+  stroke(vol, vol+20, vol+50); //reddish
   strokeWeight(h*20);
   rotate(-a/50);
   scale(rms / 20 );
@@ -99,7 +99,7 @@ noFill();
 
   push();
   rotate(h);
-  stroke("#312D2F"); //dark brown
+  stroke("#312D2F",); //dark brown
   strokeWeight(2);
   scale(vol*100);
   for (let i = 0; i < 10; i ++) {
