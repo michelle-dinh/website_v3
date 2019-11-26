@@ -10,7 +10,6 @@
 var song, analyzer;
 let mic;
 var angle = 0.0;
-var button; 
 let sound, reverb;
 
 //preload music of choice, Slow by Giraffage
@@ -34,11 +33,6 @@ function setup() {
 
   // Patch the input to an volume analyzer
   analyzer.setInput(song);
-
-  //create toggle button for music
-  button = createButton('toggle');
-  button.mousePressed(toggleSong);
-  song.play();
 
 }
 
