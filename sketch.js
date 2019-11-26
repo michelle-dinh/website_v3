@@ -8,15 +8,15 @@ var colorPalette = ["⁣⁣⁣⁣#312D2F", "⁣⁣⁣⁣#E0D5C7", "⁣⁣⁣⁣#
 
 
 //adding functionality to button
-function toggleSong() {
-  //if song is playing, press button to pause, otherwise continue playing
-  if (song.isPlaying()) {
-    song.pause();
-  } else {
-    song.play();
-  }
+// function toggleSong() {
+//   //if song is playing, press button to pause, otherwise continue playing
+//   if (song.isPlaying()) {
+//     song.pause();
+//   } else {
+//     song.play();
+//   }
 
-}
+// }
 
 //preload music of choice, Slow by Giraffage
 
@@ -59,7 +59,11 @@ function setup() {
 }
 
 function mousePressed() {
-  song.pause();
+  if (song.isPlaying()) {
+    song.pause();
+  } else {
+    song.play();
+  }
 }
 
 function draw() {
@@ -98,7 +102,7 @@ let rms = analyzer.getLevel();
   stroke('#D36462'); //reddish
   strokeWeight(h*5);
   rotate(-a/50);
-  scale(rms / 20 );
+  scale(rms + 20 );
   // Draw an rectangle with size based on volume
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
@@ -108,7 +112,7 @@ let rms = analyzer.getLevel();
   strokeWeight(2);
 
   for (let i = 0; i < 10; i ++) {
-    ellipse(0, 30, 20, 80);
+    ellipse(0, 20, 20, 60);
     rotate(PI/5);
   }
 
