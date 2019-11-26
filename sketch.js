@@ -58,13 +58,13 @@ function setup() {
 
 }
 
-function mousePressed() {
-  if (song.isPlaying()) {
-    song.pause();
-  } else {
-    song.play();
-  }
-}
+// function mousePressed() {
+//   if (song.isPlaying()) {
+//     song.pause();
+//   } else {
+//     song.play();
+//   }
+// }
 
 function draw() {
 
@@ -117,6 +117,13 @@ let rms = analyzer.getLevel();
   }
 
   pop();
+
+  if mousePressed() {
+    song.play() {
+      } else {
+        song.pause();
+      }
+  }
 
 
 }
