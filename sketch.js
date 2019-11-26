@@ -100,7 +100,7 @@ let rms = analyzer.getLevel();
   push();
   rotate(h);
   strokeWeight(2);
-
+  scale(vol*100);
   for (let i = 0; i < 10; i ++) {
     ellipse(0, 30, 20, 60);
     rotate(PI/5);
