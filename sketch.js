@@ -78,7 +78,7 @@ noFill();
   rectMode(CENTER);
   rotate(h*a/50);
   scale(rms*30);
-  // Draw an ellipse with size based on volume
+  // Drawing ellipse with size based on average amplitude of song
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
   pop(); // restore original state
 
