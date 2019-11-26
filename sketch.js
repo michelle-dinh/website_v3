@@ -21,8 +21,6 @@ function draw() {
 
 background('#F6F1EB');
 
-translate(windowWidth/2, windowHeight/2);
-
 level = analyzer.getLevel();
 fft.analyze();
 let vol = mic.getLevel();
