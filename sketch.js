@@ -34,6 +34,6 @@ function draw() {
 
   // Draw an ellipse with size based on volume
   let h = map(vol, 0, 1, height, 0);
-  ellipse(width / 2, h - 25, 50*rms, 50*rms);
+  ellipse(width / 2, h - 25, 10 + rms * 200, 10 + rms * 200);
   // ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
 }
