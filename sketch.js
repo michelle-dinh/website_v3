@@ -5,7 +5,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(710, 500);
+  // createCanvas(710, 500);
   song.loop();
 
   // create a new Amplitude analyzer
@@ -34,13 +34,13 @@ function draw() {
   let threshold = 0.1;
   if (vol > threshold) {
     stroke(0);
-    fill(rms, vol*80, vol*10);
+    fill(random(rms), random(vol*80), random(vol*10);
     rect(random(40, width), random(height), vol * 50, vol * 50);
   }
 
 
   // Draw an ellipse with size based on volume
   let h = map(vol, 0, 1, height, 0);
-  ellipse(width - h, h - 25, 10 + rms * 200, 10 + rms * 200);
+  ellipse(width/2, height/2, 10 + rms * 200, 10 + rms * 200);
   // ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
 }
