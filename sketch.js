@@ -57,7 +57,7 @@ let rms = analyzer.getLevel();
   push();
   angle = angle + rms;
   rectMode(CENTER);
-  rotate(frameCount * a);
+  rotate(a / 2);
   // Draw an ellipse with size based on volume
   rect(0, 0, 20 + rms * 200, 20 + rms * 200);
   pop();
