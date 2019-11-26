@@ -19,7 +19,7 @@ function setup() {
 
 function draw() {
 
-background(colorPalette[3]);
+background('#F6F1EB');
 
 translate(windowWidth/2, windowHeight/2);
 
