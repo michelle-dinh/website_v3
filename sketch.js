@@ -81,8 +81,8 @@ let rms = analyzer.getLevel();
   strokeWeight(2);
   angle = angle + rms;
   rectMode(CENTER);
-  rotate(h * a / 2);
-  scale(a / 20);
+  rotate(vol / 2);
+  scale(a / 80);
   // Draw an ellipse with size based on volume
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
   pop(); // restore original state
@@ -99,7 +99,7 @@ let rms = analyzer.getLevel();
 
   push();
   rotate(h);
-  stroke("#E0D5C7"); //beige
+  stroke("#312D2F"); //dark brown
   strokeWeight(2);
   scale(vol*100);
   for (let i = 0; i < 10; i ++) {
