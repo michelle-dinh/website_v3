@@ -101,7 +101,7 @@ let rms = analyzer.getLevel();
     if (vol > threshold) {
     stroke(0);
     fill(0, 100);
-    polygon(random(40, width), random(height), vol * 50, vol * 50);
+    ellipse(random(40, width), random(height), vol * 50, vol * 50);
   }
   pop();
 
