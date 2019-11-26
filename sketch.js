@@ -1,7 +1,19 @@
 var song, fft, analyzer, mic;
 var angle = 0.0;
+var button; 
 //creating an array for color palette (dark brown, beige, cream, reddish)
 var colorPalette = ["⁣⁣⁣⁣#312D2F", "⁣⁣⁣⁣#E0D5C7", "⁣⁣⁣⁣#F6F1EB", "⁣⁣⁣⁣#D36462"];
+
+
+function toggleSong() {
+  if (song.isPlaying()) {
+    song.pause();
+  } else {
+    song.play();
+  }
+
+}
+
 function preload() {
   song = loadSound("assets/slow.mp3");
 }
@@ -11,13 +23,17 @@ function setup() {
   // create a new Amplitude analyzer
   analyzer = new p5.Amplitude();
   fft = new p5.FFT();
-  song.loop();
+  // song.loop();
   mic = new p5.AudioIn();
   mic.start();
 
   // Patch the input to an volume analyzer
   analyzer.setInput(song);
   rectMode(CENTER);
+
+  button = createButton('toggle');
+  button.mousePressed(toggleSong);
+  song.play();
 
 }
 
