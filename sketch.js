@@ -100,7 +100,7 @@ let rms = analyzer.getLevel();
     push();
     if (vol > threshold) {
     noStroke();
-    fill('0#E0D5C7');
+    fill('#E0D5C7');
     ellipse(random(width), random(height), vol * 50, vol * 50);
   }
   pop();
