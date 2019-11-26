@@ -60,7 +60,7 @@ noFill();
 //OUTER BLACK SQUARE
   push(); //start new drawing state
   stroke('#312D2F'); // dark brown
-  strokeWeight(2);
+  strokeWeight(1);
   angle = angle + rms;
   rectMode(CENTER); //the first two parameters of rectangle code is its origin point
   rotate(h*a/50);
@@ -73,7 +73,7 @@ noFill();
   push();
   rectMode(CENTER);
   stroke('#D36462'); //reddish
-  strokeWeight(h*20); 
+  strokeWeight(1); 
   rotate(-a/50 + mouseY); //rotate object by declared angle and mouseY position
   scale(rms / 20 ); //scale based on avg amplitude of song divided by 20;
   // Draw an rectangle with size based on volume
@@ -84,8 +84,8 @@ noFill();
   push();
   rotate(h);
   stroke("#312D2F",); //dark brown
-  strokeWeight(2);
-  scale(vol*100);
+  strokeWeight(1);
+  scale(vol*50);
   //for loop statement that will update the ellipse to form a flower shape until it reaches 9.
   for (let i = 0; i < 10; i ++) {
     ellipse(0, 30, 20, 60);
