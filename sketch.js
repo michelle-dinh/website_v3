@@ -81,7 +81,7 @@ let rms = analyzer.getLevel();
   strokeWeight(2);
   angle = angle + rms;
   rectMode(CENTER);
-  rotate(vol / 2);
+  rotate(vol * a / 2);
   scale(a / 80);
   // Draw an ellipse with size based on volume
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
