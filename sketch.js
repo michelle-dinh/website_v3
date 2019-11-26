@@ -7,23 +7,23 @@ let sound, reverb;
 var colorPalette = ["⁣⁣⁣⁣#312D2F", "⁣⁣⁣⁣#E0D5C7", "⁣⁣⁣⁣#F6F1EB", "⁣⁣⁣⁣#D36462"];
 
 
-//adding functionality to button
-// function toggleSong() {
-//   //if song is playing, press button to pause, otherwise continue playing
-//   if (song.isPlaying()) {
-//     song.pause();
-//   } else {
-//     song.play();
-//   }
+adding functionality to button
+function toggleSong() {
+  //if song is playing, press button to pause, otherwise continue playing
+  if (song.isPlaying()) {
+    song.pause();
+    song.disconnect();
+  } else {
+    song.play();
+  }
 
-// }
+}
 
-//preload music of choice, Slow by Giraffage
+// preload music of choice, Slow by Giraffage
 
 function preload() {
   song = loadSound("assets/slow.mp3");
 
-  song.disconnect();
 }
 
 function setup() {
@@ -58,13 +58,6 @@ function setup() {
 
 }
 
-// function mousePressed() {
-//   if (song.isPlaying()) {
-//     song.pause();
-//   } else {
-//     song.play();
-//   }
-// }
 
 function draw() {
 
@@ -117,13 +110,6 @@ let rms = analyzer.getLevel();
   }
 
   pop();
-
-  if mousePressed() {
-    song.play() {
-      } else {
-        song.pause();
-      }
-  }
 
 
 }
