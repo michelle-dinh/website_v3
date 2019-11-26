@@ -6,13 +6,15 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1500,800)
+  createCanvas(1500,700);
+  // create a new Amplitude analyzer
   analyzer = new p5.Amplitude();
   fft = new p5.FFT();
   song.loop();
   mic = new p5.AudioIn();
   mic.start();
 
+  // Patch the input to an volume analyzer
   analyzer.setInput(song);
 
 }
@@ -23,12 +25,15 @@ background('#F6F1EB');
 
 level = analyzer.getLevel();
 fft.analyze();
+
 let vol = mic.getLevel();
 
+// Get the average (root mean square) amplitude
 let rms = analyzer.getLevel();
-  fill(127);
+
+  noFill();
   stroke('#D36462');
 
   // Draw an ellipse with size based on volume
-  rect(width / 2, height / 2, 50 + rms * 500, 50 + rms * 500);
+  ellipse(width / 2, height / 2, 50 + rms * 500, 50 + rms * 500);
 }
