@@ -4,6 +4,8 @@ var angle = 0.0;
 var button; 
 let sound, reverb;
 
+
+
 //adding functionality to button
 function toggleSong() {
   //if song is playing, press button to pause, otherwise continue playing
@@ -71,6 +73,7 @@ noFill();
   let vol = mic.getLevel();
   let h = map(vol, 0, 1, height, 0);
 
+//OUTER BLACK SQUARE
   push(); //start new drawing state
   stroke('#312D2F'); // dark brown
   strokeWeight(2);
@@ -82,6 +85,7 @@ noFill();
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
   pop(); // restore original state
 
+//SOLID REDDISH SHAPE
   push();
   rectMode(CENTER);
   stroke('#D36462'); //reddish
@@ -92,11 +96,13 @@ noFill();
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
 
+//FLORAL SHAPE
   push();
   rotate(h);
   stroke("#312D2F",); //dark brown
   strokeWeight(2);
   scale(vol*100);
+  //for loop statement that will update the ellipse to form a flower shape until it reaches 9.
   for (let i = 0; i < 10; i ++) {
     ellipse(0, 30, 20, 60);
     rotate(PI/5);
@@ -112,7 +118,7 @@ noFill();
   scale(vol*50); //scale is determined by mic input
   if (rms > threshold) {
     noStroke();
-    fill('#D36462');
+    fill(random(255), random(255), random(255));
     ellipse(random(width), random(height), rms + 100, rms + 100);
   }
 
