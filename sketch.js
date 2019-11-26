@@ -81,30 +81,21 @@ let rms = analyzer.getLevel();
   push();
   rectMode(CENTER);
   stroke('#D36462');
-  rotate(-a/mouseY);
-  scale(a * h / 200);
+  rotate(-a/50);
+  scale(h / 200);
   // Draw an rectangle with size based on volume
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
 
   push();
   rotate(h);
-  strokeWeight(0.05);
+  strokeWeight(1);
 
   for (let i = 0; i < 10; i ++) {
     ellipse(0, 30, 20, 80);
     rotate(PI/5);
   }
 
-  pop();
-
-    let threshold = 0.01;
-    push();
-    if (vol > threshold) {
-    noStroke();
-    fill('#E0D5C7');
-    ellipse(random(width), random(height), vol * 100, vol * 100);
-  }
   pop();
 
 
