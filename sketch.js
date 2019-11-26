@@ -1,4 +1,4 @@
-let song, analyzer;
+let song, analyzer, mic;
 
 function preload() {
   song = loadSound('assets/giraffage_slow.mp3');
@@ -13,15 +13,24 @@ function setup() {
 
   // Patch the input to an volume analyzer
   analyzer.setInput(song);
+
+  // create an audio input
+  mic = new p5.AudioIn();
+
+  // start audio input
+  mic.start();
+
 }
 
 function draw() {
   background(255);
 
+  let vol = mic.getLevel();
+
   // Get the average (root mean square) amplitude
   let rms = analyzer.getLevel();
   fill(127);
-  stroke(0);
+  stroke(vol);
 
   // Draw an ellipse with size based on volume
   ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
