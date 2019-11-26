@@ -85,8 +85,13 @@ let rms = analyzer.getLevel();
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
 
-  // let vol = mic.getLevel();
-  // let h = map(vol, 0, 1, height, 0);
+
+  let vol = mic.getLevel();
+  fill('#E0D5C7');
+  let h = map(vol, 0, 1, height, 0);
+  ellipse(0, h , vol, * 50, vol *50);
+
+
   // push();
   // fill('#D36462');
   // stroke('#312D2F');
