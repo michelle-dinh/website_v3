@@ -57,7 +57,7 @@ noFill();
 
 
   let a = angle;
-  translate(width/2, height/2);
+  translate(windowWidth/2, windowHeight/2);
   let vol = mic.getLevel();
   let h = map(vol, 0, 1, height, 0);
 
