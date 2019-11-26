@@ -22,6 +22,8 @@ function setup() {
   //Canvas is 1600 w x 800 h
   createCanvas(windowWidth, windowHeight);
 
+  song.loop();
+
   // create a new Amplitude analyzer
   analyzer = new p5.Amplitude();
 
@@ -34,7 +36,6 @@ function setup() {
   // Patch the input to an volume analyzer
   analyzer.setInput(song);
 
-  song.loop();
 
 }
 
