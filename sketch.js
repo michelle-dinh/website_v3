@@ -78,8 +78,8 @@ let rms = analyzer.getLevel();
   push();
   rectMode(CENTER);
   stroke('#312D2F');
-  strokeWeight(mouseY);
-  rotate(-a / 2);
+  strokeWeight(2);
+  rotate(-a / 10);
   scale(a / 200);
   // Draw an ellipse with size based on volume
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
