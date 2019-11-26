@@ -31,13 +31,13 @@ let vol = mic.getLevel();
 
 // Get the average (root mean square) amplitude
 let rms = analyzer.getLevel();
-
+let c = cos(angle);
   noFill();
   stroke('#D36462');
   strokeWeight(mouseY);
 
-  rotate(frameCount * 0.002);
+  rotate(c);
   translate(width / 2, height / 2);
   // Draw an ellipse with size based on volume
-  rect(width / 2, height / 2, 50 + rms * 500, 50 + rms * 500);
+  rect(0, 0, 50 + rms * 500, 50 + rms * 500);
 }
