@@ -69,7 +69,7 @@ let rms = analyzer.getLevel();
 
   push(); //start new drawing state
   stroke('#312D2F');
-  strokeWeight(1);
+  strokeWeight(2);
   angle = angle + rms;
   rectMode(CENTER);
   rotate(h * a / 2);
@@ -81,6 +81,7 @@ let rms = analyzer.getLevel();
   push();
   rectMode(CENTER);
   stroke('#D36462');
+  strokeWeight(h*20);
   rotate(-a/50);
   scale(rms / 20 );
   // Draw an rectangle with size based on volume
