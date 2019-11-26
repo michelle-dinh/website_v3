@@ -64,6 +64,8 @@ let rms = analyzer.getLevel();
 
   let a = angle;
   translate(width/2, height/2);
+  let vol = mic.getLevel();
+  let h = map(vol, 0, 1, height, 0);
 
   push(); //start new drawing state
   stroke('#312D2F');
@@ -78,20 +80,13 @@ let rms = analyzer.getLevel();
 
   push();
   rectMode(CENTER);
-  fill('#D36462');
-  rotate(-a / 10);
+  stroke('#D36462');
+  rotate(h);
   scale(a / 200);
   // Draw an ellipse with size based on volume
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
 
-  push();
-  let vol = mic.getLevel();
-  let h = map(vol, 0, 1, height, 0);
-  fill('#E0D5C7');
-  scale(h);
-  ellipse(0, h - 25 , vol * 50, vol * 50);
-  pop();
 
 
   // push();
