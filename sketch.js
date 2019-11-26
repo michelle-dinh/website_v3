@@ -73,10 +73,10 @@ noFill();
 //SOLID REDDISH SHAPE
   push();
   rectMode(CENTER);
-  stroke('#D36462'); //reddish
+  stroke('#F95A37'); //reddish
   strokeWeight(1); 
-  rotate(-a/50 + mouseY); //rotate object by declared angle and mouseY position
-  scale(rms / 20 ); //scale based on avg amplitude of song divided by 20;
+  rotate(-a/50); //rotate object by declared angle and mouseY position
+  scale(rms); //scale based on avg amplitude of song divided by 20;
   // Draw an rectangle with size based on volume
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
