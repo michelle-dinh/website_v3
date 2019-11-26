@@ -39,7 +39,7 @@ function preload() {
 
 function setup() {
   //Canvas is 1600 w x 800 h
-  createCanvas(1500, 900);
+  createCanvas(windowWidth, windowHeight);
 
   // create a new Amplitude analyzer
   analyzer = new p5.Amplitude();
