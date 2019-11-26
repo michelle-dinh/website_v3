@@ -1,3 +1,12 @@
+
+// Mixed code across various p5 examples
+// https://p5js.org/examples/sound-mic-input.html
+// https://p5js.org/examples/sound-reverb.html
+// https://p5js.org/examples/sound-mic-threshold.html
+// https://p5js.org/examples/sound-measuring-amplitude.html
+// https://p5js.org/examples/transform-rotate.html
+// https://p5js.org/examples/hello-p5-simple-shapes.html
+
 var song, analyzer;
 let mic;
 var angle = 0.0;
@@ -78,7 +87,7 @@ noFill();
   stroke('#312D2F'); // dark brown
   strokeWeight(2);
   angle = angle + rms;
-  rectMode(CENTER);
+  rectMode(CENTER); //the first two parameters of rectangle code is its origin point
   rotate(h*a/50);
   scale(rms*30);
   // Drawing ellipse with size based on average amplitude of song
@@ -89,9 +98,9 @@ noFill();
   push();
   rectMode(CENTER);
   stroke('#D36462'); //reddish
-  strokeWeight(h*20);
-  rotate(-a/50 + mouseY);
-  scale(rms / 20 );
+  strokeWeight(h*20); 
+  rotate(-a/50 + mouseY); //rotate object by declared angle and mouseY position
+  scale(rms / 20 ); //scale based on avg amplitude of song divided by 20;
   // Draw an rectangle with size based on volume
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
