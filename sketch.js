@@ -1,4 +1,5 @@
 var song, fft, analyzer, mic;
+var angle = 0.0;
 //creating an array for color palette (dark brown, beige, cream, reddish)
 var colorPalette = ["⁣⁣⁣⁣#312D2F", "⁣⁣⁣⁣#E0D5C7", "⁣⁣⁣⁣#F6F1EB", "⁣⁣⁣⁣#D36462"];
 function preload() {
@@ -16,7 +17,7 @@ function setup() {
 
   // Patch the input to an volume analyzer
   analyzer.setInput(song);
-  angleMode(DEGREES);
+  rectMode(CENTER);
 
 }
 
@@ -37,6 +38,9 @@ let rms = analyzer.getLevel();
   strokeWeight(mouseY);
 
 
+  let c = cos(angle);
+  translate(width/2, height/2);
+  rotate(c);
   // Draw an ellipse with size based on volume
-  line(width / 2, height / 2, 20 + rms * 500, 20 + rms * 500);
+  rect(width / 2, height / 2, 20 + rms * 200, 20 + rms * 200);
 }
