@@ -89,7 +89,7 @@ let rms = analyzer.getLevel();
   let vol = mic.getLevel();
   fill('#E0D5C7');
   let h = map(vol, 0, 1, height, 0);
-  ellipse(0, h , vol, * 50, vol *50);
+  ellipse(0, h , vol * 50, vol * 50);
 
 
   // push();
