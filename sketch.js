@@ -89,7 +89,7 @@ noFill();
 
   push();
   rectMode(CENTER);
-  stroke(random(255), random(vol), random(255)); //reddish
+  stroke(random(rms), random(rms), random(rms)); //reddish
   strokeWeight(h*20);
   rotate(-a/50);
   scale(rms / 20 );
