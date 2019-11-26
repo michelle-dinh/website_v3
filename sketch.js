@@ -111,12 +111,15 @@ let rms = analyzer.getLevel();
 
    // If the volume > 0.5,  an ellipse is drawn at a random location.
   // The louder the volume, the larger the ellipse.
+  push();
   let threshold = 0.5;
   if (vol > threshold) {
     noStroke();
     fill('#D36462');
     ellipse(random(width), random(height), vol * 100, vol * 50);
   }
+
+  pop();
 
 
 }
