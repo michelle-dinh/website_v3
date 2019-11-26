@@ -89,7 +89,7 @@ noFill();
 
   push();
   rectMode(CENTER);
-  stroke('#312D2F'); //reddish
+  stroke('#D36462'); //reddish
   strokeWeight(h*20);
   rotate(-a/50 + mouseY);
   scale(rms / 20 );
