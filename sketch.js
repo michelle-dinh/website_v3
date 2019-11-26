@@ -59,7 +59,7 @@ function setup() {
 }
 
 function mousePressed() {
-  song.play();
+  song.pause();
 }
 
 function draw() {
@@ -83,7 +83,7 @@ let rms = analyzer.getLevel();
   let h = map(vol, 0, 1, height, 0);
 
   push(); //start new drawing state
-  stroke('#312D2F');
+  stroke('#312D2F'); //dark brown
   strokeWeight(2);
   angle = angle + rms;
   rectMode(CENTER);
@@ -95,8 +95,8 @@ let rms = analyzer.getLevel();
 
   push();
   rectMode(CENTER);
-  stroke('#D36462');
-  strokeWeight(h*20);
+  stroke('#D36462'); //reddish
+  strokeWeight(h*5);
   rotate(-a/50);
   scale(rms / 20 );
   // Draw an rectangle with size based on volume
