@@ -1,4 +1,5 @@
-var song, fft, analyzer, mic;
+var song, fft, analyzer;
+let mic;
 var angle = 0.0;
 var button; 
 //creating an array for color palette (dark brown, beige, cream, reddish)
