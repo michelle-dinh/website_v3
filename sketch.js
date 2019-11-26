@@ -29,8 +29,7 @@ function draw() {
 
   // Get the average (root mean square) amplitude
   let rms = analyzer.getLevel();
-  noFill();
-  // fill(20, 50, 80);
+  fill(20, 50, 80);
 
   let threshold = 0.1;
   if (vol > threshold) {
