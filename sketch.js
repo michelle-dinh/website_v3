@@ -43,7 +43,6 @@ background('#F6F1EB');
 level = analyzer.getLevel();
 fft.analyze();
 
-let vol = mic.getLevel();
 
 // Get the average (root mean square) amplitude
 let rms = analyzer.getLevel();
@@ -63,8 +62,9 @@ let rms = analyzer.getLevel();
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
   pop();
 
-
+  let vol = mic.getLevel();
   let h = map(vol, 0, 1, height, 0);
+  stroke('#312D2F');
   rect(width / 2, h - 25, 50, 50);
 
 
