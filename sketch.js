@@ -5,7 +5,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(710, 200);
+  createCanvas(710, 500);
   song.loop();
 
   // create a new Amplitude analyzer
@@ -29,7 +29,7 @@ function draw() {
 
   // Get the average (root mean square) amplitude
   let rms = analyzer.getLevel();
-  fill(vol*20, vol*50, vol*80);
+  fill(rms*20, rms*50, rms*80);
 
   let threshold = 0.1;
   if (vol > threshold) {
