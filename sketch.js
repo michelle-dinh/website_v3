@@ -81,7 +81,7 @@ noFill();
   strokeWeight(2);
   angle = angle + rms;
   rectMode(CENTER);
-  rotate(rms + a / 2);
+  rotate(a/50);
   scale(rms);
   // Draw an ellipse with size based on volume
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
@@ -117,7 +117,7 @@ noFill();
   if (rms > threshold) {
     noStroke();
     fill('#D36462');
-    ellipse(0, random(height), rms + 100, rms + 100);
+    ellipse(random(width), random(height), rms + 100, rms + 100);
   }
 
   pop();
