@@ -34,7 +34,7 @@ function draw() {
   let threshold = 0.1;
   if (vol > threshold) {
     stroke(0);
-    fill(random(rms), random(vol*80), random(vol*10);
+    fill(random(rms), random(vol*80), random(vol*10));
     rect(random(40, width), random(height), vol * 50, vol * 50);
   }
 
