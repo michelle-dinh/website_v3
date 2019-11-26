@@ -58,7 +58,6 @@ function draw() {
 background('#F6F1EB');
 
 level = analyzer.getLevel();
-fft.analyze();
 
 
 // Get the average (root mean square) amplitude
@@ -107,9 +106,10 @@ noFill();
 
    // If the volume > 0.1,  an ellipse is drawn at a random location.
   // The louder the volume, the larger the ellipse.
+  //this piece of code creates the floral shape.
   let threshold = 0.1;
   push();
-  scale(vol*50);
+  scale(vol*50); //scale is determined by mic input
   if (rms > threshold) {
     noStroke();
     fill('#D36462');
