@@ -82,7 +82,7 @@ noFill();
   angle = angle + rms;
   rectMode(CENTER);
   rotate(a/50);
-  scale(rms/20);
+  scale(rms*30);
   // Draw an ellipse with size based on volume
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
   pop(); // restore original state
@@ -90,7 +90,7 @@ noFill();
   push();
   rectMode(CENTER);
   stroke('#D36462'); //reddish
-  strokeWeight(vol*20);
+  strokeWeight(h*20);
   rotate(-a/50);
   scale(rms / 20 );
   // Draw an rectangle with size based on volume
