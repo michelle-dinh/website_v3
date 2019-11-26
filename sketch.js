@@ -48,8 +48,8 @@ function setup() {
 
   reverb = new p5.Reverb();
 
-  // sonnects soundFile to reverb with a
-  // reverbTime of 6 seconds, decayRate of 0.2%
+  // connects song to reverb with a
+  // reverbTime of 2 seconds, decayRate of 0.2%
   reverb.process(song, 2, 0.2);
 
   reverb.amp(4); // turn it up!
