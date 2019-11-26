@@ -99,8 +99,8 @@ let rms = analyzer.getLevel();
     let threshold = 0.01;
     push();
     if (vol > threshold) {
-    stroke(0);
-    fill(0, 100);
+    noStroke();
+    fill('0#E0D5C7');
     ellipse(random(width), random(height), vol * 50, vol * 50);
   }
   pop();
