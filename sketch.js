@@ -60,13 +60,14 @@ fft.analyze();
 let rms = analyzer.getLevel();
 
   noFill();
-  stroke('#D36462');
 
 
   let a = angle;
   translate(width/2, height/2);
 
   push(); //start new drawing state
+  stroke('#312D2F');
+  strokeWeight(1);
   angle = angle + rms;
   rectMode(CENTER);
   rotate(a / 2);
@@ -77,8 +78,7 @@ let rms = analyzer.getLevel();
 
   push();
   rectMode(CENTER);
-  stroke('#312D2F');
-  strokeWeight(2);
+  fill('#D36462');
   rotate(-a / 10);
   scale(a / 200);
   // Draw an ellipse with size based on volume
