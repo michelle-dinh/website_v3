@@ -6,6 +6,11 @@ var button;
 var colorPalette = ["⁣⁣⁣⁣#312D2F", "⁣⁣⁣⁣#E0D5C7", "⁣⁣⁣⁣#F6F1EB", "⁣⁣⁣⁣#D36462"];
 
 
+if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+      
+      var camera, scene, renderer;
+      var geometry, material, mesh;
+
 //adding functionality to button
 function toggleSong() {
   //if song is playing, press button to pause, otherwise continue playing
@@ -45,6 +50,22 @@ function setup() {
   button.mousePressed(toggleSong);
   song.play();
 
+  var W = window.innerWidth, H = window.innerHeight;
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize( W, H );
+        document.body.appendChild( renderer.domElement );
+
+        camera = new THREE.PerspectiveCamera( 50, W/H, 1, 10000 );
+        camera.position.z = 500;
+
+        scene = new THREE.Scene();
+        
+        
+        geometry = new THREE.IcosahedronGeometry(188.64, 1);
+        material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading, wireframe: true, wireframeLinewidth: 1});
+        mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
 }
 
 function draw() {
@@ -81,11 +102,29 @@ let rms = analyzer.getLevel();
   push();
   rectMode(CENTER);
   stroke('#D36462');
-  rotate(h);
+  rotate(-a/50);
   scale(a / 200);
   // Draw an ellipse with size based on volume
   rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
+
+  push();
+  rotate(h);
+
+  for (let i = 0; i < 10; i ++) {
+    ellipse(0, 30, 20, 80);
+    rotate(PI/5);
+  }
+
+  pop();
+
+requestAnimationFrame( draw );
+        
+        // experiment with code from the snippets menu here
+        mesh.position.x = Math.sin( Date.now() * 0.001 ) * 100;  
+        mesh.rotation.z = Date.now() * 0.0005;
+
+        renderer.render( scene, camera );
 
 
 
@@ -104,3 +143,6 @@ let rms = analyzer.getLevel();
 
 
 }
+
+setup();
+draw();
