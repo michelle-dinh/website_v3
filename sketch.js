@@ -16,6 +16,7 @@ function setup() {
 
   // Patch the input to an volume analyzer
   analyzer.setInput(song);
+  rectMode(CENTER);
 
 }
 
@@ -36,7 +37,7 @@ let rms = analyzer.getLevel();
   strokeWeight(mouseY);
 
   rotate(frameCount * 0.002);
-
+  translate(width / 2, height / 2);
   // Draw an ellipse with size based on volume
   rect(width / 2, height / 2, 50 + rms * 500, 50 + rms * 500);
 }
