@@ -1,47 +1,23 @@
-let song, analyzer, mic;
-
-function preload() {
-  song = loadSound('assets/giraffage_slow.mp3');
-}
+let mic, fft;
 
 function setup() {
-  createCanvas(1920, 200);
-  song.loop();
+  createCanvas(710, 400);
+  noFill();
 
-  // create a new Amplitude analyzer
-  analyzer = new p5.Amplitude();
-
-  // Patch the input to an volume analyzer
-  analyzer.setInput(song);
-
-  // create an audio input
   mic = new p5.AudioIn();
-
-  // start audio input
   mic.start();
-
+  fft = new p5.FFT();
+  fft.setInput(mic);
 }
 
 function draw() {
-  // background(255);
+  background(200);
 
-  let vol = mic.getLevel();
+  let spectrum = fft.analyze();
 
-  // Get the average (root mean square) amplitude
-  let rms = analyzer.getLevel();
-  fill(20, 50, 80);
-
-  let threshold = 0.1;
-  if (vol > threshold) {
-    stroke(0);
-    noFill();
-    fill(random(rms), random(vol*80), random(vol*10));
-    rect(random(40, width), random(height), vol * 50, vol * 50);
+  beginShape();
+  for (i = 0; i < spectrum.length; i++) {
+    vertex(i, map(spectrum[i], 0, 255, height, 0));
   }
-
-
-  // Draw an ellipse with size based on volume
-  let h = map(vol, 0, 1, height, 0);
-  ellipse(width/2, h - 10, 10 + rms * 200, 10 + rms * 200);
-  // ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
+  endShape();
 }
