@@ -19,7 +19,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1500,900);
+  createCanvas(1600,1000);
   // create a new Amplitude analyzer
   analyzer = new p5.Amplitude();
   fft = new p5.FFT();
@@ -53,6 +53,7 @@ let rms = analyzer.getLevel();
 
   let a = angle;
   translate(width/2, height/2);
+
   push();
   angle = angle + rms;
   rectMode(CENTER);
