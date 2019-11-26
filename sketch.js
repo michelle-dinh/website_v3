@@ -6,6 +6,7 @@ function preload() {
 }
 
 function setup() {
+  createCanvas(1200,800)
   analyzer = new p5.Amplitude();
   fft = new p5.FFT();
   song.loop();
@@ -31,7 +32,7 @@ let rms = analyzer.getLevel();
   stroke(0);
 
   // Draw an ellipse with size based on volume
-  ellipse(windowWidth / 2, windowHeight / 2, 10 + rms * 200, 10 + rms * 200);
+  ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
 }
 
 
