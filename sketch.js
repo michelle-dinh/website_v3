@@ -65,7 +65,7 @@ noFill();
   angle = angle + rms;
   rectMode(CENTER); //the first two parameters of rectangle code is its origin point
   rotate(h*a/50);
-  scale(rms*30);
+  scale(rms*10);
   // Drawing ellipse with size based on average amplitude of song
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
   pop(); // restore original state
@@ -76,7 +76,7 @@ noFill();
   stroke('#F95A37'); //reddish
   strokeWeight(0.5); 
   rotate(-a/50); //rotate object by declared angle and mouseY position
-  scale(rms*50); //scale based on avg amplitude of song divided by 20;
+  scale(rms*20); //scale based on avg amplitude of song divided by 20;
   // Draw an rectangle with size based on volume
   ellipse(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
