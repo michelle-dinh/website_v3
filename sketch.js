@@ -10,7 +10,21 @@
 var song, analyzer;
 let mic;
 var angle = 0.0;
+var button; 
 let sound, reverb;
+
+
+
+//adding functionality to button
+function toggleSong() {
+  //if song is playing, press button to pause, otherwise continue playing
+  if (song.isPlaying()) {
+    song.pause();
+  } else {
+    song.play();
+  }
+
+}
 
 //preload music of choice, Slow by Giraffage
 
@@ -21,8 +35,6 @@ function preload() {
 function setup() {
   //Canvas is 1600 w x 800 h
   createCanvas(windowWidth, windowHeight);
-
-  song.loop();
 
   // create a new Amplitude analyzer
   analyzer = new p5.Amplitude();
@@ -36,13 +48,25 @@ function setup() {
   // Patch the input to an volume analyzer
   analyzer.setInput(song);
 
+  //create toggle button for music
+  button = createButton('toggle');
+  button.mousePressed(toggleSong);
+  song.play();
+
+  reverb = new p5.Reverb();
+
+  // connects song to reverb with a
+  // reverbTime of 2 seconds, decayRate of 0.2%
+  reverb.process(song, 2, 0.2);
+
+  reverb.amp(4); // turn it up!
 
 }
 
 function draw() {
 
 //backoground color is cream
-background('#F4F3EB');
+background('#F6F1EB');
 
 level = analyzer.getLevel();
 
@@ -54,18 +78,18 @@ noFill();
 
 
   let a = angle;
-  translate(windowWidth/2, windowHeight/2);
+  translate(width/2, height/2);
   let vol = mic.getLevel();
   let h = map(vol, 0, 1, height, 0);
 
 //OUTER BLACK SQUARE
   push(); //start new drawing state
-  stroke('#7DC9E7'); // dark brown
-  strokeWeight(1);
+  stroke('#312D2F'); // dark brown
+  strokeWeight(2);
   angle = angle + rms;
   rectMode(CENTER); //the first two parameters of rectangle code is its origin point
   rotate(h*a/50);
-  scale(rms*10);
+  scale(rms*30);
   // Drawing ellipse with size based on average amplitude of song
   rect(0, 0, 50 + rms * 200, 50 + rms * 200);
   pop(); // restore original state
@@ -73,20 +97,20 @@ noFill();
 //SOLID REDDISH SHAPE
   push();
   rectMode(CENTER);
-  stroke('#F95A37'); //reddish
-  strokeWeight(0.5); 
-  rotate(-a/50); //rotate object by declared angle and mouseY position
-  scale(rms*20); //scale based on avg amplitude of song divided by 20;
+  stroke('#D36462'); //reddish
+  strokeWeight(h*20); 
+  rotate(-a/50 + mouseY); //rotate object by declared angle and mouseY position
+  scale(rms / 20 ); //scale based on avg amplitude of song divided by 20;
   // Draw an rectangle with size based on volume
-  ellipse(0, 0, 10 + rms * 200, 10 + rms * 200);
+  rect(0, 0, 10 + rms * 200, 10 + rms * 200);
   pop();
 
 //FLORAL SHAPE
   push();
   rotate(h);
-  stroke("#FFBE86",); //dark brown
-  strokeWeight(1);
-  scale(vol*50);
+  stroke("#312D2F",); //dark brown
+  strokeWeight(2);
+  scale(vol*100);
   //for loop statement that will update the ellipse to form a flower shape until it reaches 9.
   for (let i = 0; i < 10; i ++) {
     ellipse(0, 30, 20, 60);
